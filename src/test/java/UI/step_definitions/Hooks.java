@@ -30,7 +30,7 @@ public class Hooks {
         actions = new Actions(driver);
         wait = new WebDriverWait(driver, 10);
 
-      //  Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+   Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Driver.get().manage().window().maximize();
     }
@@ -43,7 +43,7 @@ public class Hooks {
         }
 
 
-      //  Driver.closeDriver();
+     Driver.closeDriver();
     }
 
 

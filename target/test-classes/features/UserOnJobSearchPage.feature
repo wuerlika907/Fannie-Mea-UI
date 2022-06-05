@@ -5,7 +5,7 @@
     Scenario: user on the search job page
       Given user on home page
       And  user navigate to Careers, OurTeam
-      Then title should be all Our Team
+      Then title should be Our Teams | Fannie Mae
       And Our Teams display on the page
 
 

@@ -16,8 +16,28 @@ public abstract   class BasePages {
         PageFactory.initElements(Driver.get(),this);
     }
 
-    @FindBy(xpath = "//a[@href='/careers/our-teams']")
-    public WebElement OurTeam;
+    @FindBy(linkText = "Careers")
+    public WebElement Careers;
+
+    @FindBy(linkText = "Meet our teams")
+    public  WebElement ourTeam;
+
+    @FindBy(xpath = "//h1")
+    public WebElement Header;
+
+
+
+
+
+
+
+    public void ourTeamPage(){
+        Careers.click();
+        ourTeam.click();
+
+
+
+    }
 
 
 

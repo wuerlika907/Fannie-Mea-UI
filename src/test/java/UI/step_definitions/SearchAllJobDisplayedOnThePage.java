@@ -6,6 +6,8 @@ import UI.utilities.ConfigurationReader;
 import UI.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import javax.security.auth.login.Configuration;
 
@@ -15,7 +17,7 @@ public class SearchAllJobDisplayedOnThePage extends BasePages {
     public void user_on_home_page() {
        String url= ConfigurationReader.get("UiURL");
         Driver.get().get(url);
-      //  BrowserUtlis.waitFor(1);
+       BrowserUtlis.waitFor(1);
 
 
     }
@@ -23,20 +25,23 @@ public class SearchAllJobDisplayedOnThePage extends BasePages {
     @Given("user navigate to Careers, OurTeam")
     public void user_navigate_to_Careers_OurTeam() {
 
-       OurTeam.click();
+     ourTeamPage();
+
+
     }
+    @Then("title should be Our Teams | Fannie Mae")
+    public void title_should_be_Our_Teams_Fannie_Mae() {
 
-    @Then("title should be all Our Team")
-    public void title_should_be_all_Our_Team() {
-
-        String Title =Driver.get().getTitle();
-        System.out.println(Title);
+    String actualTitle =Driver.get().getTitle();
+    String expectedTitle="Our Teams | Fannie Mae" ;
+        Assert.assertEquals(expectedTitle,actualTitle);
 
     }
 
     @Then("Our Teams display on the page")
     public void our_Teams_display_on_the_page() {
 
+       Header.isDisplayed();
     }
 
 
